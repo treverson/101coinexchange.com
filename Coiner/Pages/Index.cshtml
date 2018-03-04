@@ -1,0 +1,102 @@
+﻿@page
+@model IndexModel
+@Html.AntiForgeryToken()
+@{
+    //ViewData["Title"] = "Home page";
+}
+
+    <input type="number" id="bitCursi" value="" style="display:none"/>
+    <input type="number" id="ethCurss" value="" style="display:none"/>
+    <input type="number" id="rplCursi" value="" style="display:none"/>
+
+    <section class="middle">
+        <h4>Cryptocurrency Exchange(TEST NET)</h4>
+    </section>
+
+    <div class="container">
+        <!--  Row Amount  -->
+        <div class="row">
+            <div class="col s12 m3 l1">   
+            </div>
+            
+            <div class="col s12 m3 l5 input-field">         
+                <input type="number" min="0.001" step="0.00000001" max="10"  class="validate" id="bitcoin" value=""/>
+                <label for="bitcoin" data-error="min=0.001 and max = 10"><i class="fab fa-bitcoin"></i>&nbsp;Bitcoin</label>
+            </div>
+                    
+            <div class="col s12 m3 l5 input-field">  
+                <input type="number" min="0.01" step="0.00000001" max="2500"  class="validate" readonly_ id="ethereum" value="" />
+                <label for="ethereum" data-error="min=0.01 and max = 2500"><i class="fab fa-ethereum" id="eth-image"></i>&nbsp;Ethereum</label>
+            </div>
+
+            <div class="col s12 m3 l1"> 
+                <div id="lock" class="lock hidden">       
+                    <div class="timer">
+                        <div class="mask"></div>
+                    </div>
+                    <i style="font-size:10px;margin-left:5px;margin-top:0px;color:red;" class="fas fa-lock">&nbsp;</i>
+                </div>
+            </div>
+        </div>
+
+        <!--  Row Wallet  -->
+        <div class="row hidden wallet" id="wallet">
+            <div class="col s12 m3 l1">        
+
+            </div>
+            <div class="col s12 m3 l5 input-field">        
+                <input type="text" class="validate" id="bitcoin-address" value=""/>
+                <label for="bitcoin-address" data-error="wrong address"><i class="fab fa-bitcoin"></i>&nbsp;Bitcoin Address</label>
+            </div>
+            <div class="col s12 m3 l5 input-field">        
+                <input type="text" class="validate" id="ethereum-address" value=""/>
+                <label for="ethereum-address" data-error="wrong address"><i class="fab fa-ethereum"></i>&nbsp;Ethereum Address</label>
+            </div>
+            <div class="col s12 m3 l1">        
+ 
+            </div>
+        </div>
+        
+        <!--  Row Buttom  -->
+        <div class="row">
+            <div class="col s12 center">        
+                <a class="waves-effect waves-light btn" id="step1"><i class="material-icons right">account_balance</i>Get Started</a>
+            </div>
+        </div>
+
+        <!--  Row Buttom  -->
+        <div class="row hidden" id="row-step2">
+                <div class="col s12 center">        
+                    <a class="waves-effect waves-light btn" id="step2"><i class="material-icons right force-hidden">autorenew</i>Exchange</a>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="loader-wrap" id="loader">
+        <div class="loader">
+            <div class="preloader-wrapper big active ">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+
+<script src="~/js/site.js"></script>
+
